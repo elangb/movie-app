@@ -1,0 +1,215 @@
+/* Container untuk list movie */
+.movie-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Mengatur posisi daftar film ke tengah */
+  }
+  
+  .movie-item {
+    margin-top: 25px;
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: center;
+  }
+  
+  .movie {
+    flex: 1;
+    margin: 0 8px;
+    cursor: pointer;
+    position: relative; /* Menambahkan posisi relatif untuk movie */
+    transition: transform 0.2s; /* Efek transisi saat movie dihover */
+  }
+  
+  /* Efek transisi untuk movie saat dihover */
+  .movie:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* Style untuk judul dan tahun film */
+  .movie-details {
+    position: absolute;
+    bottom: 10px; /* Menempatkan judul dan tahun di bagian bawah */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Warna latar belakang semi-transparan */
+    color: white;
+    padding: 8px;
+    border-radius: 0 0 8px 8px; /* Membuat sudut bawah membulat */
+  }
+  
+  /* Style untuk judul film */
+  .movie-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Style untuk tahun film */
+  .movie-year {
+    font-size: 14px;
+  }
+  
+  .empty {
+    flex: 1;
+  }
+  
+  /* Style the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image */
+  .modal-content,
+  .caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Add Animation */
+  @keyframes zoom {
+    from {
+      transform: scale(0)
+    }
+    to {
+      transform: scale(1)
+    }
+  }
+  
+  /* Style input */
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Style placeholder */
+  input[type="text"]::placeholder {
+    color: #999;
+  }
+  
+  /* Hover effect */
+  input[type="text"]:hover {
+    border-color: #666;
+  }
+  
+  /* Focus effect */
+  input[type="text"]:focus {
+    border-color: #333;
+  }
+  
+  /* Style for button if needed */
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Styling untuk pop-up */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-content img {
+    width: 100%; /* Mengisi lebar konten */
+    max-width: 180px; /* Lebar maksimum gambar */
+    display: block; /* Agar gambar berada di tengah */
+    margin: 0 auto; /* Agar gambar berada di tengah */
+    border-radius: 8px; /* Sudut membulatkan gambar */
+  }
+  
+
+  #myModal img[src='No Poster'] {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  

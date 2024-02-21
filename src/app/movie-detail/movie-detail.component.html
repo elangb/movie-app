@@ -1,0 +1,9 @@
+<div *ngIf="movie" class="movie-detail-container">
+    <h2 class="movie-title">{{ movie.Title }}</h2>
+    <p class="movie-year">{{ movie.Year }}</p>
+    <!-- <p class="movie-imdbID">IMDB ID: {{ movie.imdbID }}</p> -->
+    <p *ngIf="movie.Actors" class="movie-actors">Actors: {{ movie.Actors }}</p>
+</div>
+<div *ngIf="!movie" class="movie-not-found">
+    <p>Movie not found.</p>
+</div>

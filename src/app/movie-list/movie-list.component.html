@@ -1,0 +1,39 @@
+<!-- Input pencarian diluar loop *ngFor -->
+<input type="text" [(ngModel)]="query" placeholder="Search for movies..." (input)="searchMovies()">
+
+<div *ngIf="movies.length === 0">
+  <div class="no-results">No results found.</div>
+</div>
+
+<div *ngFor="let movie of movies; let i = index">
+  <div class="movie-item" *ngIf="i % 4 === 0">
+    <div *ngFor="let j of [0, 1, 2, 3]">
+      <div *ngIf="movies[i + j]" class="movie" (click)="showModal(movies[i + j])">
+        <img [src]="movies[i + j].Poster" alt="{{ movies[i + j]?.Title }}">
+        <div class="movie-details">
+          <p class="movie-title">{{ movies[i + j]?.Title || 'No Title' }}</p>
+          <p class="movie-year">{{ movies[i + j]?.Year || 'No Year' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tidak perlu *ngIf untuk menentukan apakah perlu menambahkan elemen kosong -->
+<div class="movie-item">
+  <div *ngFor="let j of Array(4 - (movies.length % 4)).fill(0)">
+    <div class="empty"></div>
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close" (click)="closeModal()">&times;</span>
+  <div class="modal-content">
+    <img [src]="selectedMovie?.Poster" alt="{{ selectedMovie?.Title || 'No Title' }}">
+    <h2>{{ selectedMovie?.Title || 'No Title' }}</h2>
+    <p>{{ selectedMovie?.Year || 'No Year' }}</p>
+    <p>{{ selectedMovie?.imdbID || 'No Year' }}</p>
+    <p>{{ selectedMovie?.Type || 'No Year' }}</p>
+    <!-- Tambahkan detail film lainnya di sini -->
+  </div>
+</div>

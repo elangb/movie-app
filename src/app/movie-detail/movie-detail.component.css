@@ -1,0 +1,46 @@
+/* movie-detail.component.css */
+
+/* Kontainer untuk detail film */
+.movie-detail-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Judul film */
+  .movie-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Tahun rilis */
+  .movie-year {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  /* ID IMDB */
+  .movie-imdbID {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 5px;
+  }
+  
+  /* Daftar aktor */
+  .movie-actors {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  /* Pesan jika film tidak ditemukan */
+  .movie-not-found {
+    font-size: 16px;
+    color: #FF5733;
+    margin-top: 10px;
+  }
+  
