@@ -2,7 +2,7 @@
 <input type="text" [(ngModel)]="query" placeholder="Search for movies..." (input)="searchMovies()">
 
 <div *ngIf="movies.length === 0">
-  <div class="no-results">No results found.</div>
+  <div class="no-results">Film Tidak Ditemukan</div>
 </div>
 
 <div *ngFor="let movie of movies; let i = index">
@@ -30,10 +30,10 @@
   <span class="close" (click)="closeModal()">&times;</span>
   <div class="modal-content">
     <img [src]="selectedMovie?.Poster" alt="{{ selectedMovie?.Title || 'No Title' }}">
-    <h2>{{ selectedMovie?.Title || 'No Title' }}</h2>
-    <p>{{ selectedMovie?.Year || 'No Year' }}</p>
-    <p>{{ selectedMovie?.imdbID || 'No Year' }}</p>
-    <p>{{ selectedMovie?.Type || 'No Year' }}</p>
+    <h2>Title : {{ selectedMovie?.Title || 'No Title' }}</h2>
+    <p>Year : {{ selectedMovie?.Year || 'No Year' }}</p>
+    <p>imdbID : {{ selectedMovie?.imdbID || 'No imdbID' }}</p>
+    <p> Type : {{ selectedMovie?.Type || 'No Type' }}</p>
     <!-- Tambahkan detail film lainnya di sini -->
   </div>
 </div>

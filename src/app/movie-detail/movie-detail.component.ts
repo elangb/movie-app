@@ -31,7 +31,7 @@ export class MovieDetailComponent implements OnInit {
           }
         },
         (error) => {
-          console.error('Error occurred while fetching movie details:', error);
+          console.error('Terjadi kesalahan saat mengambil detail film:', error);
         }
       );
   }
